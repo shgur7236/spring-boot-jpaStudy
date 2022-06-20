@@ -22,7 +22,7 @@ public class User {
     @NonNull
     private String email;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime created_At;
 
-    private LocalDateTime updatedAt;
+    private LocalDateTime updated_At;
 }
