@@ -4,7 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-
+//
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
@@ -22,7 +22,7 @@ public class User {
     @NonNull
     private String email;
 
-    private LocalDateTime created_At;
+    private LocalDateTime created_at;
 
-    private LocalDateTime updated_At;
+    private LocalDateTime updated_at;
 }
