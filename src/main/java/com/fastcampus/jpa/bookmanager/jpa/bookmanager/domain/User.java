@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Table(name = "USER_TABLE")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // 자동으로 값이 증가
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) // 자동으로 값이 증가
     private Long id;
 
     @NonNull
