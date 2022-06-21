@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 @Entity
+@Table(name = "USER_TABLE")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 자동으로 값이 증가
@@ -22,7 +23,7 @@ public class User {
     @NonNull
     private String email;
 
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
 
-    private LocalDateTime updated_at;
+    private LocalDateTime updatedAt;
 }
