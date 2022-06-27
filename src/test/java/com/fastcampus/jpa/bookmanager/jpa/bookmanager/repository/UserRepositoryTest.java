@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @SpringBootTest
@@ -18,14 +20,10 @@ class UserRepositoryTest {
     private UserRepository userRepository;
 
     @Test
+    @Transactional
     void crud() { // Create,Read,Update,Delete
-        User user1 = new User("jack", "jack@fastcampus.com");
-        User user2 = new User("steve", "steve@fastcampus.com");
+        User user = userRepository.findById(1L).orElse(null);
 
-        userRepository.saveAll(Lists.newArrayList(user1, user2));
-
-        List<User> users = userRepository.findAll();
-
-        users.forEach(System.out::println);
+        System.out.println(user);
     }
 }
