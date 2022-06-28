@@ -20,10 +20,11 @@ class UserRepositoryTest {
     private UserRepository userRepository;
 
     @Test
-    @Transactional
     void crud() { // Create,Read,Update,Delete
-        User user = userRepository.findById(1L).orElse(null);
+        userRepository.save(new User("new martin","newmartin@factcampus.com"));
 
-        System.out.println(user);
+        userRepository.flush();
+
+        userRepository.findAll().forEach(System.out::println);
     }
 }

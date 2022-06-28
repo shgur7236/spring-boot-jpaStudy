@@ -11,10 +11,10 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 @Entity
-@Table(name = "USER_TABLE")
+@Table(name = "user_table")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE) // 자동으로 값이 증가
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NonNull
