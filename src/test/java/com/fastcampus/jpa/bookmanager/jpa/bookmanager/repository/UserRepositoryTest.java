@@ -5,13 +5,15 @@ import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.endsWith;
 
 
 @SpringBootTest
@@ -21,10 +23,12 @@ class UserRepositoryTest {
 
     @Test
     void crud() { // Create,Read,Update,Delete
-        userRepository.save(new User("new martin","newmartin@factcampus.com"));
+        ExampleMatcher matcher = ExampleMatcher.matching()
+                .withIgnorePaths("name")
+                .withMatcher("email", endsWith());
 
-        userRepository.flush();
+        Example<User> example = Example.of(new User("ma", "fastcampus.com"), matcher);
 
-        userRepository.findAll().forEach(System.out::println);
+        userRepository.findAll(example).forEach(System.out::println);
     }
 }
