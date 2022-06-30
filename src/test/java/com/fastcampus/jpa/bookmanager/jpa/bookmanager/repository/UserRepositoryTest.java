@@ -49,6 +49,7 @@ class UserRepositoryTest {
 //        System.out.println("findLast1ByName : " + userRepository.findLast1ByName("martin"));
 
         System.out.println("findByEmailAndName : " + userRepository.findByEmailAndName("martin@fastcampus.com", "martin"));
+        System.out.println("findByEmailOrName : " + userRepository.findByEmailOrName("martin@fastcampus.com", "martin"));
 
     }
 }
