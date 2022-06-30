@@ -51,4 +51,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByIdBetween(Long id1, Long id2);
 
     List<User> findByIdGreaterThanEqualAndIdLessThanEqual(Long id1, Long id2);
+
+    List<User> findByIdIsNotNull();
 }
