@@ -49,18 +49,20 @@ class UserRepositoryTest {
 //        System.out.println("findFirst2ByName : " + userRepository.findFirst2ByName("martin"));
 //        System.out.println("findLast1ByName : " + userRepository.findLast1ByName("martin"));
 
-        System.out.println("findByEmailAndName : " + userRepository.findByEmailAndName("martin@fastcampus.com", "martin"));
-        System.out.println("findByEmailOrName : " + userRepository.findByEmailOrName("martin@fastcampus.com", "martin"));
-
-        System.out.println("findByCreatedAt : " + userRepository.findByCreatedAtAfter(LocalDateTime.now().minusDays(1L)));
-        System.out.println("findByIdAfter : " + userRepository.findByIdAfter(4L));
-        System.out.println("findByCreatedAtGreaterThan : " + userRepository.findByCreatedAtGreaterThan(LocalDateTime.now().minusDays(1L)));
-        System.out.println("findByCreatedAtGreaterThanEqual : " + userRepository.findByCreatedAtGreaterThanEqual(LocalDateTime.now().minusDays(1L)));
-
-        System.out.println("findByCreatedAtBetween : " + userRepository.findByCreatedAtBetween(LocalDateTime.now().minusDays(1L), LocalDateTime.now().plusDays(1L)));
-        System.out.println("findByIdBetween : " + userRepository.findByIdBetween(1L, 3L));
-        System.out.println("findByIdGreaterThanEqualAndIdLessThanEqual : " +userRepository.findByIdGreaterThanEqualAndIdLessThanEqual(1L, 3L));
+//        System.out.println("findByEmailAndName : " + userRepository.findByEmailAndName("martin@fastcampus.com", "martin"));
+//        System.out.println("findByEmailOrName : " + userRepository.findByEmailOrName("martin@fastcampus.com", "martin"));
+//
+//        System.out.println("findByCreatedAt : " + userRepository.findByCreatedAtAfter(LocalDateTime.now().minusDays(1L)));
+//        System.out.println("findByIdAfter : " + userRepository.findByIdAfter(4L));
+//        System.out.println("findByCreatedAtGreaterThan : " + userRepository.findByCreatedAtGreaterThan(LocalDateTime.now().minusDays(1L)));
+//        System.out.println("findByCreatedAtGreaterThanEqual : " + userRepository.findByCreatedAtGreaterThanEqual(LocalDateTime.now().minusDays(1L)));
+//
+//        System.out.println("findByCreatedAtBetween : " + userRepository.findByCreatedAtBetween(LocalDateTime.now().minusDays(1L), LocalDateTime.now().plusDays(1L)));
+//        System.out.println("findByIdBetween : " + userRepository.findByIdBetween(1L, 3L));
+//        System.out.println("findByIdGreaterThanEqualAndIdLessThanEqual : " +userRepository.findByIdGreaterThanEqualAndIdLessThanEqual(1L, 3L));
 
         System.out.println("findByIdIsNotNull : " + userRepository.findByIdIsNotNull());
-    }
+//        System.out.println("findByIdIsNotEmpty : " + userRepository.findByAddressIsNotEmpty());
+        System.out.println("findByNameIn : " + userRepository.findByNameIn(Lists.newArrayList("martin", "dennis")));
+     }
 }
