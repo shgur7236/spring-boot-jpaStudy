@@ -65,11 +65,13 @@ class UserRepositoryTest {
 //        System.out.println("findByIdIsNotEmpty : " + userRepository.findByAddressIsNotEmpty());
 //        System.out.println("findByNameIn : " + userRepository.findByNameIn(Lists.newArrayList("martin", "dennis")));
 
-        System.out.println("findByNameStartingWith : " + userRepository.findByNameStartingWith("mar"));
-        System.out.println("findByNameEndingWith : " + userRepository.findByNameEndingWith("tin"));
-        System.out.println("findByNameContains : "  + userRepository.findByNameContains("art"));
+//        System.out.println("findByNameStartingWith : " + userRepository.findByNameStartingWith("mar"));
+//        System.out.println("findByNameEndingWith : " + userRepository.findByNameEndingWith("tin"));
+//        System.out.println("findByNameContains : "  + userRepository.findByNameContains("art"));
+//
+//        System.out.println("findByNameLike : " + userRepository.findByNameLike("%art%"));
 
-        System.out.println("findByNameLike : " + userRepository.findByNameLike("%art%"));
+
 
      }
 }
