@@ -85,4 +85,21 @@ class UserRepositoryTest {
          System.out.println("findFirstByNameWithSortParams : " + userRepository.findFirstByName("martin", Sort.by(Sort.Order.desc("id"), Sort.Order.asc("email"))));
          System.out.println("findByNameWithPaging : " + userRepository.findByName("martin", PageRequest.of(1, 1, Sort.by(Sort.Order.desc("id")))).getTotalElements());
     }
+
+    @Test
+    void insertAndUpdateTest(){
+        User user = new User();
+
+        user.setName("martin");
+        user.setEmail("martin2@fastcampus.com");
+
+        userRepository.save(user);
+
+        User user2 = userRepository.findById(1L).orElseThrow(RuntimeException::new);
+        user2.setName("marrrrrrrtin");
+
+        userRepository.save(user2);
+
+
+    }
 }
