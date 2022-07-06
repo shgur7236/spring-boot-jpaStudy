@@ -25,6 +25,7 @@ public class User {
     @NonNull
     private String email;
 
+    @Column(nullable = false)
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
