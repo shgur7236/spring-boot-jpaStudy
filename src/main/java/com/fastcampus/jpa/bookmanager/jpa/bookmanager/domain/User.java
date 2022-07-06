@@ -25,10 +25,14 @@ public class User {
     @NonNull
     private String email;
 
-    @Column
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+
+
+//    @Transient      // DB레코드에는 처리하지 않지만 객체를 따로 사용 가능
+//    private String testData;
 
 //    @OneToMany(fetch = FetchType.EAGER)
 //    private List<Address> address;
