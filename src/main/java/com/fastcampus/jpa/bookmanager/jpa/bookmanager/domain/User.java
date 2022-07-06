@@ -22,6 +22,9 @@ public class User {
     @NonNull
     private String name;
 
+    @Enumerated(value = EnumType.STRING)
+    private Gender gender;
+
     @NonNull
     private String email;
 
