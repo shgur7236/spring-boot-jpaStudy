@@ -42,36 +42,14 @@ public class User {
 
     @PrePersist
     public void prePersist(){
-        System.out.println(">>> prePersist");
-    }
-
-    @PostPersist
-    public void postPersist(){
-        System.out.println(">>> postPersist");
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
     public void preUpdate(){
-        System.out.println(">>> preUpdate");
+        this.updatedAt = LocalDateTime.now();
     }
 
-    @PostUpdate
-    public void postUpdate(){
-        System.out.println(">>> postUpdate");
-    }
 
-    @PreRemove
-    public void preRemove(){
-        System.out.println(">>> preRemove");
-    }
-
-    @PostRemove
-    public void postRemove(){
-        System.out.println(">>> postRemove");
-    }
-
-    @PostLoad
-    public void postLoad(){
-        System.out.println(">>> postLoad");
-    }
 }
