@@ -1,46 +1,27 @@
 package com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain;
 
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
-//
-@NoArgsConstructor
-@AllArgsConstructor
-@RequiredArgsConstructor
-@Data
-@Builder
 @Entity
+@NoArgsConstructor
+@Data
 @EntityListeners(value = MyEntityListener.class)
-@Table(name = "user_table") //indexes = { @Index(columnList = "name")}, uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
-public class User implements Auditable{
-
+public class Book implements Auditable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NonNull
     private String name;
 
-    @Enumerated(value = EnumType.STRING)
-    private Gender gender;
+    private String author;
 
-    @NonNull
-    private String email;
-
-    @Column(updatable = false)
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
-
-
-//    @Transient      // DB레코드에는 처리하지 않지만 객체를 따로 사용 가능
-//    private String testData;
-
-//    @OneToMany(fetch = FetchType.EAGER)
-//    private List<Address> address;
 
 //    @PrePersist
 //    public void prePersist(){
@@ -52,6 +33,4 @@ public class User implements Auditable{
 //    public void preUpdate(){
 //        this.updatedAt = LocalDateTime.now();
 //    }
-
-
 }
