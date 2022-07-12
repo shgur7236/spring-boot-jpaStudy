@@ -1,7 +1,9 @@
 package com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain;
 
+import com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.listener.Auditable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -9,8 +11,8 @@ import java.time.LocalDateTime;
 @Entity
 @NoArgsConstructor
 @Data
-@EntityListeners(value = MyEntityListener.class)
-public class Book implements Auditable{
+@EntityListeners(value = AuditingEntityListener.class)
+public class Book implements Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

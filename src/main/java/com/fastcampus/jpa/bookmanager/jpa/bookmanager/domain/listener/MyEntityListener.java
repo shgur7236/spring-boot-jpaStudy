@@ -1,4 +1,6 @@
-package com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain;
+package com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.listener;
+
+import com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.listener.Auditable;
 
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;

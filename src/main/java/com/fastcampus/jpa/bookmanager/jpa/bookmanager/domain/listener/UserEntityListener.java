@@ -1,5 +1,7 @@
-package com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain;
+package com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.listener;
 
+import com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.User;
+import com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.UserHistory;
 import com.fastcampus.jpa.bookmanager.jpa.bookmanager.repository.UserHistoryRepository;
 import com.fastcampus.jpa.bookmanager.jpa.bookmanager.support.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
