@@ -1,6 +1,7 @@
 package com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain;
 
 
+import com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.listener.Auditable;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 @Data
 @MappedSuperclass
 @EntityListeners(value = AuditingEntityListener.class)
-public class BaseEntity {
+public class BaseEntity implements Auditable{
     @CreatedDate
     private LocalDateTime createdAt;
 

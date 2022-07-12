@@ -21,7 +21,7 @@ import java.time.LocalDateTime;
 @Entity
 @EntityListeners(value = {AuditingEntityListener.class, UserEntityListener.class})
 @Table(name = "user_table") //indexes = { @Index(columnList = "name")}, uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
-public class User extends BaseEntity implements Auditable {
+public class User extends BaseEntity  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
