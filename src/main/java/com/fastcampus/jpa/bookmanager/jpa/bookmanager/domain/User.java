@@ -1,6 +1,7 @@
 package com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain;
 
 import lombok.*;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -13,7 +14,7 @@ import java.util.List;
 @Data
 @Builder
 @Entity
-@EntityListeners(value = MyEntityListener.class)
+@EntityListeners(value = {AuditingEntityListener.class, UserEntityListener.class})
 @Table(name = "user_table") //indexes = { @Index(columnList = "name")}, uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
 public class User implements Auditable{
 

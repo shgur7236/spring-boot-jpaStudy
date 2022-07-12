@@ -23,6 +23,9 @@ class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private UserHistoryRepository userHistoryRepository;
+
     @Test
     void crud() { // Create,Read,Update,Delete
         userRepository.save(new User("david", "david@fastcampus.com"));
@@ -156,5 +159,18 @@ class UserRepositoryTest {
 
         System.out.println("to-be : " +userRepository.findAll().get(0));
     }
+
+    @Test
+    void userHistoryTest(){
+
+        User user =  new User();
+        user.setName("martin-new");
+        user.setEmail("martin-new@fastcampus.com");
+
+        userRepository.save(user);
+
+        userHistoryRepository.findAll().forEach(System.out::println);
+    }
+
 
 }
