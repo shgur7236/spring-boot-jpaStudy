@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @Entity
 @EntityListeners(value = {AuditingEntityListener.class, UserEntityListener.class})
 @Table(name = "user_table") //indexes = { @Index(columnList = "name")}, uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
-public class User implements Auditable {
+public class User extends BaseEntity implements Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,12 +34,12 @@ public class User implements Auditable {
     @NonNull
     private String email;
 
-    @Column(updatable = false)
-    @CreatedDate
-    private LocalDateTime createdAt;
-
-    @LastModifiedDate
-    private LocalDateTime updatedAt;
+//    @Column(updatable = false)
+//    @CreatedDate
+//    private LocalDateTime createdAt;
+//
+//    @LastModifiedDate
+//    private LocalDateTime updatedAt;
 
 //    @Transient      // DB레코드에는 처리하지 않지만 객체를 따로 사용 가능
 //    private String testData;

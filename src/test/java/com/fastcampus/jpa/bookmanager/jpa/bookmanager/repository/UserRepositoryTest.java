@@ -169,6 +169,10 @@ class UserRepositoryTest {
 
         userRepository.save(user);
 
+        user.setName("martin-new-new");
+
+        userRepository.save(user);
+
         userHistoryRepository.findAll().forEach(System.out::println);
     }
 
