@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
 public class User extends BaseEntity  {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
 
     @NonNull
@@ -41,6 +41,7 @@ public class User extends BaseEntity  {
 //    private LocalDateTime createdAt;
 //
 //    @LastModifiedDate
+
 //    private LocalDateTime updatedAt;
 
 //    @Transient      // DB레코드에는 처리하지 않지만 객체를 따로 사용 가능
