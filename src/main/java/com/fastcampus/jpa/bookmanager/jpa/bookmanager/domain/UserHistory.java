@@ -21,7 +21,7 @@ import java.time.LocalDateTime;
 public class UserHistory extends BaseEntity  {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long userId;
