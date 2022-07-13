@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @EntityListeners(value = {AuditingEntityListener.class, UserEntityListener.class})
-@Table(name = "user_table") //indexes = { @Index(columnList = "name")}, uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
+@Table(name = "user_table")
 public class User extends BaseEntity  {
 
     @Id
@@ -35,31 +35,5 @@ public class User extends BaseEntity  {
 
     @NonNull
     private String email;
-
-//    @Column(updatable = false)
-//    @CreatedDate
-//    private LocalDateTime createdAt;
-//
-//    @LastModifiedDate
-
-//    private LocalDateTime updatedAt;
-
-//    @Transient      // DB레코드에는 처리하지 않지만 객체를 따로 사용 가능
-//    private String testData;
-
-//    @OneToMany(fetch = FetchType.EAGER)
-//    private List<Address> address;
-
-//    @PrePersist
-//    public void prePersist(){
-//        this.createdAt = LocalDateTime.now();
-//        this.updatedAt = LocalDateTime.now();
-//    }
-//
-//    @PreUpdate
-//    public void preUpdate(){
-//        this.updatedAt = LocalDateTime.now();
-//    }
-
 
 }

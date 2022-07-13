@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-//@EntityListeners(value = AuditingEntityListener.class)
 public class UserHistory extends BaseEntity  {
 
     @Id
@@ -29,10 +28,4 @@ public class UserHistory extends BaseEntity  {
     private String email;
 
     private String name;
-
-//    @CreatedDate
-//    private LocalDateTime createdAt;
-//
-//    @LastModifiedDate
-//    private LocalDateTime updatedAt;
 }
