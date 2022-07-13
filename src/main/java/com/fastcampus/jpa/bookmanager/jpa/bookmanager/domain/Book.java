@@ -30,4 +30,7 @@ public class Book extends BaseEntity {
 
     private Long publisherId;
 
+    @OneToOne(mappedBy = "book")
+    private BookReviewInfo bookReviewInfo;
+
 }
