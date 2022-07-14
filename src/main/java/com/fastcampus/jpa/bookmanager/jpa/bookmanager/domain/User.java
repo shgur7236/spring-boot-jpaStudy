@@ -38,5 +38,9 @@ public class User extends BaseEntity  {
     @NonNull
     private String email;
 
+    @Builder.Default
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    private List<UserHistory> userHistories = new ArrayList<>();
 
 }
