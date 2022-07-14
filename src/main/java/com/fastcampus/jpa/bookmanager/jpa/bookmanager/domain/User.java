@@ -9,6 +9,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 //
 @NoArgsConstructor
@@ -35,5 +37,6 @@ public class User extends BaseEntity  {
 
     @NonNull
     private String email;
+
 
 }

@@ -2,10 +2,13 @@ package com.fastcampus.jpa.bookmanager.jpa.bookmanager.repository;
 
 import com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.Gender;
 import com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.User;
+import com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.UserHistory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.*;
+
+import java.util.List;
 
 
 @SpringBootTest
@@ -181,7 +184,12 @@ class UserRepositoryTest {
         user.setEmail("nohhyuk@fastcampus.com");
         userRepository.save(user);
 
-        userHistoryRepository.findAll().forEach(System.out::println);
+//        userHistoryRepository.findAll().forEach(System.out::println);
+
+        List<UserHistory> result = userHistoryRepository.findByUserId(
+                userRepository.findByEmail("nohhyuk@fastcampus.com").getId());
+
+        result.forEach(System.out::println);
     }
 
 }
