@@ -50,7 +50,7 @@ class BookReviewInfoRepositoryTest {
         Book book = new Book();
         book.setName("Jpa 초격화 패키지");
         book.setAuthorId(1L);
-        book.setPublisherId(1L);
+//        book.setPublisherId(1L);
 
         return bookRepository.save(book);
 

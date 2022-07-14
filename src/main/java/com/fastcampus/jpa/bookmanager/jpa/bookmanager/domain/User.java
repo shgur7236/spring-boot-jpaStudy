@@ -44,4 +44,11 @@ public class User extends BaseEntity  {
     @ToString.Exclude
     private List<UserHistory> userHistories = new ArrayList<>();
 
+    @OneToMany
+    @ToString.Exclude
+    @JoinColumn(name = "user_id")
+    @Builder.Default
+
+    private List<Review> reviews = new ArrayList<>();
+
 }
