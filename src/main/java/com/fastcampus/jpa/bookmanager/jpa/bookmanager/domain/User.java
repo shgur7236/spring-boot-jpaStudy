@@ -48,7 +48,6 @@ public class User extends BaseEntity  {
     @ToString.Exclude
     @JoinColumn(name = "user_id")
     @Builder.Default
-
     private List<Review> reviews = new ArrayList<>();
 
 }
