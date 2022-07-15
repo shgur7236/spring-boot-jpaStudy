@@ -26,4 +26,8 @@ public class Author extends BaseEntity{
     @ManyToMany
     private List<Book> books = new ArrayList<>();
 
+    public void addBook(Book book){
+        this.books.add(book);
+    }
+
 }

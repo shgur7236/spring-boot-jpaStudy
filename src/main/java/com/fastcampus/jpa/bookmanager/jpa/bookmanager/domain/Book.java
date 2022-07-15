@@ -46,4 +46,8 @@ public class Book extends BaseEntity {
     @ManyToMany
     private List<Author> authors = new ArrayList<>();
 
+    public void addAuthor(Author author){
+        this.authors.add(author);
+    }
+
 }
