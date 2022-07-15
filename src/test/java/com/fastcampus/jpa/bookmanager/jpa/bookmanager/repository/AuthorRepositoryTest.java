@@ -3,8 +3,10 @@ package com.fastcampus.jpa.bookmanager.jpa.bookmanager.repository;
 import com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.Author;
 import com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.Book;
 import org.assertj.core.util.Lists;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,6 +18,8 @@ public class AuthorRepositoryTest {
     @Autowired
     private BookRepository bookRepository;
 
+    @Test
+    @Transactional
     void manyToManyTest(){
         Book book1 = givenBook("혼자가 되는 과정");
         Book book2 = givenBook("하나이면서 둘인 것");
@@ -36,7 +40,8 @@ public class AuthorRepositoryTest {
         bookRepository.saveAll(Lists.newArrayList(book1,book2,book3,book4));
         authorRepository.saveAll(Lists.newArrayList(author1,author2));
 
-
+        System.out.println("authors through book : " + bookRepository.findAll().get(2).getAuthors());
+        System.out.println("books through author : " + authorRepository.findAll().get(0).getBooks());
 
     }
 
