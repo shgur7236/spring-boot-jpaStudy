@@ -7,6 +7,8 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Data
@@ -26,8 +28,8 @@ public class Author extends BaseEntity{
     @ManyToMany
     private List<Book> books = new ArrayList<>();
 
-    public void addBook(Book book){
-        this.books.add(book);
+    public void addBook(Book... book){
+        Collections.addAll(this.books, book);
     }
 
 }

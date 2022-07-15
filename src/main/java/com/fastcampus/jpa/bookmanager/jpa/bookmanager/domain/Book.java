@@ -12,6 +12,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -46,8 +47,8 @@ public class Book extends BaseEntity {
     @ManyToMany
     private List<Author> authors = new ArrayList<>();
 
-    public void addAuthor(Author author){
-        this.authors.add(author);
+    public void addAuthor(Author... author){
+        Collections.addAll(this.authors, author);
     }
 
 }
