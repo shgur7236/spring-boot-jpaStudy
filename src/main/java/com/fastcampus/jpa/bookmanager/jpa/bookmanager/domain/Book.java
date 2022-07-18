@@ -48,10 +48,10 @@ public class Book extends BaseEntity {
     @OneToMany
     @JoinColumn(name = "book_id")
     @ToString.Exclude
-    private List<Author> authors = new ArrayList<>();
+    private List<BookAndAuthor> bookAndAuthors = new ArrayList<>();
 
-    public void addAuthor(Author... author){
-        Collections.addAll(this.authors, author);
+    public void addBookAndAuthors(BookAndAuthor... bookAndAuthors){
+        Collections.addAll(this.bookAndAuthors, bookAndAuthors);
     }
 
 }
