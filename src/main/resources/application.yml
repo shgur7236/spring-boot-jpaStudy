@@ -1,4 +1,9 @@
 spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306
+    username: root
+    password: pynn2409!
+
   h2:
     console:
       enabled: true
@@ -10,6 +15,8 @@ spring:
     generate-ddl: false
     hibernate:
       ddl-auto: create-drop
+
+
 
 
 
