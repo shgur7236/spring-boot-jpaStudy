@@ -9,7 +9,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 class BookmanagerApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void  contextLoads() {
 	}
 
 }

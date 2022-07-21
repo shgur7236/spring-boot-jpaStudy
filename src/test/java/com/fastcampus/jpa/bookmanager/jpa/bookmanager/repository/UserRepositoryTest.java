@@ -7,11 +7,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 
 @SpringBootTest
+@Transactional
 class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
@@ -129,7 +131,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    void prePersisTest(){
+    void  prePersisTest(){
         User user = new User();
         user.setEmail("martin2@fastcampus.com");
         user.setName("martin");

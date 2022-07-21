@@ -5,6 +5,7 @@ import com.fastcampus.jpa.bookmanager.jpa.bookmanager.domain.BookReviewInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,6 +21,7 @@ class BookReviewInfoRepositoryTest {
     void crudTest(){
         BookReviewInfo bookReviewInfo = new BookReviewInfo();
    //     bookReviewInfo.setBookId(1L);
+        bookReviewInfo.setBook(givenBook());
         bookReviewInfo.setAverageReviewScore(4.5f);
         bookReviewInfo.setReviewCount(2);
 
@@ -40,7 +42,7 @@ class BookReviewInfoRepositoryTest {
         System.out.println(">>> " + result);
 
         BookReviewInfo result2 = bookRepository
-                .findById(1L)
+                .findById(6L)
                 .orElseThrow(RuntimeException::new)
                 .getBookReviewInfo();
 
