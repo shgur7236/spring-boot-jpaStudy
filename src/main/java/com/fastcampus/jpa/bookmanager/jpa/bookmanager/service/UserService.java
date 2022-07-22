@@ -35,7 +35,8 @@ public class UserService {
         User user1 = userRepository.findById(1L).get();
         entityManager.remove(user1);
 
-        user1.setName("marrrrtin");
-        entityManager.merge(user1);
+//        user1.setName("marrrrtin");
+//        entityManager.merge(user1);
+
     }
 }
