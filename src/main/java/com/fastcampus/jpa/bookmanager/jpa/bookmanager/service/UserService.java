@@ -25,5 +25,7 @@ public class UserService {
 //        userRepository.save(user);
 
         entityManager.persist(user);
+
+        user.setName("newUserAfterPersist");
     }
 }
