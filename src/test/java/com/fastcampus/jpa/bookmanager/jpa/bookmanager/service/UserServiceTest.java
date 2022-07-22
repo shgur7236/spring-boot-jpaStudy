@@ -20,7 +20,8 @@ class UserServiceTest {
     void test(){
         userService.put();
 
-        System.out.println(">>> " + userRepository.findByEmail("newUser@fastcampus.com"));
+//        System.out.println(">>> " + userRepository.findByEmail("newUser@fastcampus.com"));
+        userRepository.findAll().forEach(System.out::println);
     }
 
 }
