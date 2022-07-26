@@ -49,5 +49,6 @@ public class User extends BaseEntity  {
     @JoinColumn(name = "user_id")
     @Builder.Default
     private List<Review> reviews = new ArrayList<>();
+    //
 
 }
